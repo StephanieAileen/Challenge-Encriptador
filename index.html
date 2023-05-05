@@ -4,37 +4,72 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>Encriptador - Alura LATAM</title>
+
+    <title>Alura ONE - Challenge Encriptador</title>
   </head>
   <body>
-    <main>
-      <h1>Encriptador de Texto</h1>
-      <textarea
-        name="text"
-        cols="30"
-        rows="10"
-        placeholder="Ingresa tu texto aquí"
-        autocapitalize="none"
-        id="texto_encriptar"
-      ></textarea>
-      <div id="notext">
-        <aside>
-          <img src="" alt="" />
-          <h3>Ningún mensaje fue encontrado</h3>
-          <p>Ingresa el texto que quieres encriptar o desencriptar.</p>
-        </aside>
+    <div class="container">
+      <div class="encriptar">
+        <textarea
+          name="textinput"
+          id="textinput"
+          cols="30"
+          rows="10"
+          placeholder="Ingresa el texto aquí"
+        ></textarea>
       </div>
-      <div id="textdetected">
-        <aside>
-          <p></p>
-        </aside>
+      <div class="terminos"><p>Solo letras minúsculas y sin acento</p></div>
+      <div class="botones">
+        <button type="button" id="btnEncrypt">Encriptar</button>
+        <button type="button" id="btnDecrypt">Desencriptar</button>
+        <button type="button" id="copy">Copiar</button>
       </div>
-      <button type="submit" id="encriptar">Encriptar</button>
-      <button type="submit" id="desencriptar">Desencriptar</button>
-    </main>
-    <footer></footer>
-
-    <script src="script.js"></script>
+    </div>
+    <div class="encriptado">
+      <div class="mensaje-encriptado" id="mensaje-encriptado">
+        <img
+          src="./imgs/undraw_mobile_search_jxq5.svg"
+          alt="Inserta texto"
+          id="img-p"
+        />
+        <h2 id="titulo-mensaje">Ningún mensaje encontrado</h2>
+        <p id="mensaje-p">
+          Ingresa el texto que desea encriptar o desencriptar
+        </p>
+        <textarea name="result" id="textresult" cols="30" rows="10"></textarea>
+      </div>
+    </div>
   </body>
+  <footer>
+    <div class="footer-content">
+      <h3>Alura Latam - Oracle ONE Scholarship</h3>
+      <p>
+        Website para Alura Latam, hecho por Stephanie Aileen. Para más
+        información y para ver el código, visita la página de github.
+      </p>
+      <ul class="socials">
+        <li>
+          <a href="https://github.com/StephanieAileen" target="_blank"
+            ><i class="fab fa-github-square"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  <script type="text/javascript" src="script.js"></script>
+  <script>
+    var btn = document.querySelector('#btnEncrypt');
+    btn.onclick = encrypt;
+
+    var btnDecrypt = document.querySelector('#btnDecrypt');
+    btnDecrypt.onclick = decrypt;
+
+    var btnCopy = document.querySelector('#copy');
+    btnCopy.onclick = copy;
+  </script>
 </html>
